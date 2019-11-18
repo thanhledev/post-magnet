@@ -1,0 +1,7 @@
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\bin\Debug\PostMagnet.Services.Internal.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\bin\Debug\PostMagnet.Services.Internal.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\bin\Debug\PostMagnet.Domain.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\bin\Debug\PostMagnet.Domain.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\obj\Debug\PostMagnet.Services.Internal.csprojResolveAssemblyReference.cache
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\obj\Debug\PostMagnet.Services.Internal.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.Internal\obj\Debug\PostMagnet.Services.Internal.pdb

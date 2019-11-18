@@ -1,0 +1,4 @@
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Domain\bin\Release\PostMagnet.Domain.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Domain\bin\Release\PostMagnet.Domain.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Domain\obj\Release\PostMagnet.Domain.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Domain\obj\Release\PostMagnet.Domain.pdb

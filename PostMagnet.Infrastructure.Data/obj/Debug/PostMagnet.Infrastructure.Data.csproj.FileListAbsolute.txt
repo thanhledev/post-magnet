@@ -1,0 +1,14 @@
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\PostMagnet.Infrastructure.Data.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\PostMagnet.Infrastructure.Data.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\FluentNHibernate.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\Iesi.Collections.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\NHibernate.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\PostMagnet.Domain.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\PostMagnet.Domain.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\FluentNHibernate.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\FluentNHibernate.xml
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\Iesi.Collections.xml
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\bin\Debug\NHibernate.xml
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\obj\Debug\PostMagnet.Infrastructure.Data.csprojResolveAssemblyReference.cache
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\obj\Debug\PostMagnet.Infrastructure.Data.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Infrastructure.Data\obj\Debug\PostMagnet.Infrastructure.Data.pdb

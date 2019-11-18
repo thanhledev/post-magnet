@@ -1,0 +1,10 @@
+﻿1) Employee: 
+- new javascript files: 
+	+ employee-creation-validation.js
+	+ employee-creation.js
+	+ employee-list-managed.js
+	+ employee-login.js
+	+ employee-profile-validation.js
+	+ employee-profile.js
+2) JobClass:
+- new javascript files

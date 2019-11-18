@@ -1,0 +1,9 @@
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\bin\Debug\PostMagnet.Services.SeoServices.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\bin\Debug\PostMagnet.Services.SeoServices.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\bin\Debug\JoeBlogs.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\bin\Debug\PostMagnet.Domain.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\bin\Debug\PostMagnet.Domain.pdb
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\obj\Debug\PostMagnet.Services.SeoServices.csprojResolveAssemblyReference.cache
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\obj\Debug\PostMagnet.Services.SeoServices.dll
+C:\Users\kupo\documents\visual studio 2013\Projects\PostMagnet\PostMagnet.Services.SeoServices\obj\Debug\PostMagnet.Services.SeoServices.pdb

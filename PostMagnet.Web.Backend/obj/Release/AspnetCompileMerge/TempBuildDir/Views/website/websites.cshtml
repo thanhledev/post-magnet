@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Website Management";
+    ViewBag.Description = "Backend Management - Website management system";
+    ViewData["Controller"] = "Website";
+    ViewData["Action"] = "Websites";
+}
+@section page_external_plugins_css{
+    <link href="~/Content/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase"> Websites</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="btn-group">
+                                <button id="website-create" class="btn sbold green">
+                                    Add New
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover table-checkable order-column" id="website-table">
+                    <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" class="group-checkable" data-set="#website-table .checkboxes"/>
+                        </th>
+                        <th> Host </th>
+                        <th> Username </th>
+                        <th> Latest Tested </th>
+                        <th> Note </th>
+                        <th> Action </th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END TABLE PORTLET-->
+        <!-- BEGIN CREATE DIALOG BOX-->
+        <div id="website-dialog" class="modal fade bs-modal-lg" tabindex="-1" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="portlet light form-fit bordered">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class=" icon-layers font-green"></i>
+                                            <span class="caption-subject font-green bold uppercase">Website Information</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body form">
+                                        <script type="text/javascript">
+                                            var formCreateWebsiteAction = "@Url.Action("create", "website")";
+                                            var formUpdateWebsiteAction = "@Url.Action("update", "website")";
+                                            var openMode = 1;
+                                            var actionStatus = false;
+                                        </script>
+                                        <!-- BEGIN FORM-->
+                                        <form id="website-form" class="form-horizontal">
+                                            @Html.AntiForgeryToken()
+                                            <div class="form-body">
+                                                <div class="alert alert-danger display-hide">
+                                                    <button class="close" data-close="alert"></button> You have some form errors. Please check below.
+                                                </div>
+                                                <div class="form-group hide">
+                                                    <label class="control-label col-md-3">
+                                                        Id
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="website_id" id="website-id"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">
+                                                        Host
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="website_host" id="website-host"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">
+                                                        Username
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="website_username" id="website-username"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">
+                                                        Password
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="password" class="form-control" name="website_password" id="website-password"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">
+                                                        Confirm password
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="password" class="form-control" name="website_confirm_password" id="website-confirm-password"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group hide">
+                                                    <label class="control-label col-md-3">
+                                                        Latest Tested Date
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="website_tested" id="website-tested"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group hide">
+                                                    <label class="control-label col-md-3">
+                                                        Note
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <textarea class="form-control" rows="5" name="website_note" id="website-note"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">
+                                                        Check Connectivity?
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="checkbox" class="make-switch" name="website_check_connectivity" id="website-check-connectivity" data-on-text="&nbsp;Yes&nbsp;&nbsp;" data-off-text="&nbsp;No&nbsp;" checked="checked">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
+                        <button type="button" class="btn green" id="website-submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CREATE DIALOG BOX-->
+    </div>
+</div>
+
+@section page_external_plugins_scripts{
+    @Scripts.Render("~/Content/js/website_list_external_plugins")
+}
+@section page_scripts{
+    @Scripts.Render("~/Content/js/website_list_page_scripts")
+}

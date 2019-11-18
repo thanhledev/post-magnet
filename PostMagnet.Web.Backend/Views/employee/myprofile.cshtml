@@ -1,0 +1,304 @@
+﻿@using PostMagnet.Web.Backend.Models
+@model Tuple<EmployeeProfileViewModel, Boolean, Int32>
+@{
+    ViewBag.Title = "My Personal Profile";
+    ViewBag.Description = "Backend Management - Personal profile";
+    ViewData["Controller"] = "Employee";
+    ViewData["Action"] = "MyProfile";
+}
+
+@section page_external_plugins_css{
+    <link href="~/Content/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div class="profile-sidebar">
+            <!-- PORTLET MAIN -->
+            <div class="portlet light profile-sidebar-portlet ">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="~/Content/pages/media/profile/avatar.png" class="img-responsive" alt="@Model.Item1.Username">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name"> @Model.Item1.Username </div>
+                    <div class="profile-usertitle-job"> @Model.Item1.Role </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="icon-home"></i> Overview
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:void(0)">
+                                <i class="icon-settings"></i> Account Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+            <!-- END PORTLET MAIN -->
+        </div>
+        <!-- END BEGIN PROFILE SIDEBAR -->
+        <!-- BEGIN PROFILE CONTENT -->
+        <div class="profile-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title tabbable-line">
+                            <div class="caption caption-md">
+                                <i class="icon-globe theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab_1_1" data-toggle="tab">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_1_2" data-toggle="tab">Change Password</a>
+                                </li>
+                                @if (Model.Item2)
+                                {
+                                    <li>
+                                        <a href="#tab_1_3" data-toggle="tab">My Rates</a>
+                                    </li>
+                                }
+                                <li>
+                                    <a href="#tab_1_4" data-toggle="tab">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_1_5" data-toggle="tab">Private Messages</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="tab-content">
+                                <script type="text/javascript">
+                                    var formChangeProfileAction = "@Url.Action("updateinfo","employee")";
+                                    var formChangePasswordAction = "@Url.Action("updatepassword","employee")";
+                                </script>
+
+                                <!-- PERSONAL INFO TAB -->
+                                <div class="tab-pane active" id="tab_1_1">
+                                    <form id="form-change-profile" class="form-horizontal">
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-body">
+                                            <div class="alert alert-danger display-hide">
+                                                <button class="close" data-close="alert"></button>
+                                                <p id="profile-error-message">You have some form errors. Please check below.</p>
+                                            </div>
+                                            <div class="form-group margin-top-20">
+                                                <label class="control-label col-md-3">
+                                                    Full Name
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-icon right">
+                                                        <i class="fa"></i>
+                                                        <input type="text" class="form-control" name="employee_name" id="employee-name" value="@Model.Item1.Name" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">
+                                                    Email
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-icon right">
+                                                        <i class="fa"></i>
+                                                        <input type="text" class="form-control" name="employee_email" id="employee-email" value="@Model.Item1.Email" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">
+                                                    Phone
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-icon right">
+                                                        <i class="fa"></i>
+                                                        <input type="text" class="form-control" name="employee_phone" id="employee-phone" value="@Model.Item1.Phone" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <button type="button" class="btn btn-primary" id="profile-update">Update?</button>
+                                            </div>
+                                            <div class="row hide" id="profile-buttons">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn btn-primary" id="profile-submit">Submit</button>
+                                                    <button type="button" class="btn btn-danger" id="profile-cancel">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--END PERSONAL INFO TAB -->
+                                <!-- CHANGE PASSWORD TAB -->
+                                <div class="tab-pane" id="tab_1_2">
+                                    <form id="form-change-password" class="form-horizontal">
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-body">
+                                            <div class="alert alert-danger display-hide">
+                                                <button class="close" data-close="alert"></button>
+                                                <p id="password-error-message">You have some form errors. Please check below.</p>
+                                            </div>
+                                            <div class="form-group margin-top-20">
+                                                <label class="control-label col-md-3">
+                                                    Old password
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-icon right">
+                                                        <i class="fa"></i>
+                                                        <input type="password" class="form-control" name="employee_old_password" id="employee-old-password" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">
+                                                    New password
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-icon right">
+                                                        <i class="fa"></i>
+                                                        <input type="password" class="form-control" name="employee_new_password" id="employee-new-password" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">
+                                                    Confirm password
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-icon right">
+                                                        <i class="fa"></i>
+                                                        <input type="password" class="form-control" name="employee_confirm_password" id="employee-confirm-password" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn green" id="password-submit">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END CHANGE PASSWORD TAB -->
+                                @if (Model.Item2)
+                                {
+                                    <!-- PERSONAL RATE TAB -->
+                                    <div class="tab-pane" id="tab_1_3">
+                                        <form class="form-horizontal">
+                                            <div class="form-body">
+                                                <div class="form-group margin-top-20">
+                                                    <label class="control-label col-md-3">
+                                                        Rate
+                                                    </label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" value="@Model.Item3" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--END PERSONAL RATE TAB -->
+                                }
+                                <!-- NOTIFICATION LIST TAB -->
+                                <div class="tab-pane" id="tab_1_4">
+                                    <!-- BEGIN NOTIFICATION TABLE -->
+                                    <div class="portlet light bordered">
+                                        <div class="portlet-title">
+                                            <div class="caption font-dark">
+                                                <i class="icon-settings font-dark"></i>
+                                                <span class="caption-subject bold uppercase"> Notifications</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                            <table class="table table-striped table-bordered table-hover table-checkable order-column" id="notification-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <input type="checkbox" class="group-checkable" data-set="#notification-table .checkboxes" />
+                                                        </th>
+                                                        <th> Created </th>
+                                                        <th> Content </th>
+                                                        <th> Status </th>
+                                                        <th> Action </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- END  NOTIFICATION TABLE -->
+                                </div>
+                                <!-- END NOTIFICATION LIST TAB -->
+                                <!-- MESSAGE LIST TAB -->
+                                <div class="tab-pane" id="tab_1_5">
+                                    <!-- BEGIN MESSAGE TABLE -->
+                                    <div class="portlet light bordered">
+                                        <div class="portlet-title">
+                                            <div class="caption font-dark">
+                                                <i class="icon-settings font-dark"></i>
+                                                <span class="caption-subject bold uppercase"> Notifications</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                            <table class="table table-striped table-bordered table-hover table-checkable order-column" id="message-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <input type="checkbox" class="group-checkable" data-set="#message-table .checkboxes" />
+                                                        </th>
+                                                        <th> Sender </th>
+                                                        <th> Sent </th>
+                                                        <th> Content </th>
+                                                        <th> Status </th>
+                                                        <th> Action </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- END  MESSAGE TABLE -->
+                                </div>
+                                <!-- END MESSAGE LIST TAB -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PROFILE CONTENT -->
+    </div>
+</div>
+
+@section page_external_plugins_scripts{
+    @Scripts.Render("~/Content/js/employee_profile_external_plugins")
+}
+@section page_scripts{
+    @Scripts.Render("~/Content/js/personal_profile_page_scripts")
+}
+

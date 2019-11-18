@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <!-- BEGIN CORE CSS FILES -->
+    <link href="~/Content/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/css/components.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END CORE CSS FILES -->
+    <!-- BEGIN PAGE CSS FILES -->
+    <link href="~/Content/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/layouts/layout/css/themes/default.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE CSS FILES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @RenderSection("page_external_plugins_css", required: false)
+    <!-- END PAGE LEVEL PLUGINS -->
+    <link rel="shortcut icon" href="~/Content/favicon.ico" />
+</head>
+<!-- END HEAD -->
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner ">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="/">
+                    <img src="~/Content/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                </a>
+                <div class="menu-toggler sidebar-toggler"> <span></span> </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN MEGA MENU -->
+            <!-- DOC: Remove "hor-menu-light" class to have a horizontal menu with theme background instead of white background -->
+            <!-- DOC: This is desktop version of the horizontal menu. The mobile version is defined(duplicated) in the responsive menu below along with sidebar menu. So the horizontal menu has 2 seperate versions -->
+            <!-- Add Later -->
+            <!-- END MEGA MENU -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            @Html.Action("topmenu", "menu")
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+    <div class="clearfix"> </div>
+    <!-- END HEADER & CONTENT DIVIDER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        @Html.Action("main", "menu")
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content">
+                <!-- BEGIN RENDER BODY-->
+                @RenderBody()
+                <!-- END RENDER BODY-->
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            @DateTime.Now.Year &copy; Post Magnet Backend System.
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <!--[if lt IE 9]>
+    <script src="~/Content/global/plugins/respond.min.js"></script>
+    <script src="~/Content/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    <!-- BEGIN CORE PLUGINS -->
+    @Scripts.Render("~/Content/js/core")
+    @Scripts.Render("~/Content/js/inner")
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @RenderSection("page_external_plugins_scripts", required: false)
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    @RenderSection("page_scripts", required: false)
+    <!-- END PAGE LEVEL SCRIPTS -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+------------------------- Invoice Information -------------------------
+----- Begin Invoice #1 -----
+	Job Name: Bài Viết Đầu Tư
+	Tag Name: Đầu Tư
+	Class Name: A1
+	Base Price: 300,000
+	Deadline: September 05 2016 00:00:00
+	Submitted: September 05 2016 01:56:29
+	Job Status: Pending
+	Article Status: Unedit
+	Submission Status: Late
+	Extra payments:
+		Empty extra payment
+	Total: 300,000 VND
+----- End Invoice -----
+----- Begin Invoice #2 -----
+	Job Name: Công việc 07
+	Tag Name: Tài Chính
+	Class Name: C2
+	Base Price: 90,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 05 2016 01:57:01
+	Job Status: Pending
+	Article Status: Edit
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: -10,000 VND
+			Note: Phải sửa một số lỗi
+	Total: 80,000 VND
+----- End Invoice -----
+----- Begin Invoice #3 -----
+	Job Name: Công việc 08
+	Tag Name: Bảo Hiểm
+	Class Name: B2
+	Base Price: 160,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 05 2016 01:58:09
+	Job Status: Pending
+	Article Status: Unedit
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: 20,000 VND
+			Note: Dịch tốt
+	Total: 180,000 VND
+----- End Invoice -----
+----- Begin Invoice #4 -----
+	Job Name: Công việc 09
+	Tag Name: Đầu Tư
+	Class Name: B1
+	Base Price: 200,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 05 2016 01:58:16
+	Job Status: Pending
+	Article Status: Rewrite
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: -50,000 VND
+			Note: Lỗi nhiều quá
+	Total: 150,000 VND
+----- End Invoice -----
+----- Begin Invoice #5 -----
+	Job Name: Công việc 10
+	Tag Name: Kinh Tế
+	Class Name: A1
+	Base Price: 300,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 05 2016 01:58:25
+	Job Status: Pending
+	Article Status: Unedit
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: 30,000 VND
+			Note: Dịch tốt
+	Total: 330,000 VND
+----- End Invoice -----
+----- Begin Invoice #6 -----
+	Job Name: Công việc 11
+	Tag Name: Bảo Hiểm
+	Class Name: A1
+	Base Price: 300,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 05 2016 01:58:31
+	Job Status: Pending
+	Article Status: Unedit
+	Submission Status: OnTime
+	Extra payments:
+		Empty extra payment
+	Total: 300,000 VND
+----- End Invoice -----
+------------------------- Ending -------------------------

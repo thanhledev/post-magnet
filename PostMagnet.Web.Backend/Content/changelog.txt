@@ -1,0 +1,2 @@
+﻿1) Update jquery notif8 css files (min)
+2) Update app.min.js : global assets path to /Content/

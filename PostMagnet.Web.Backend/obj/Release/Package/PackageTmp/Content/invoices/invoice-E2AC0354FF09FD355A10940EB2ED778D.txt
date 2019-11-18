@@ -1,0 +1,82 @@
+------------------------- Invoice Information -------------------------
+----- From :September 01 2016 00:00:00 - To : September 30 2016 23:59:59
+----- Begin Job#1 -----
+	Job Name: Công việc 07
+	Tag Name: Tài Chính
+	Class Name: C2
+	Base Price: 90,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 07 2016 00:54:01
+	Job Status: Done
+	Article Status: Unedit
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: 30,000 VND
+			Note: Bài dịch tốt
+	Total: 120,000 VND
+----- End Job#1 -----
+----- Begin Job#2 -----
+	Job Name: Công việc 08
+	Tag Name: Bảo Hiểm
+	Class Name: B2
+	Base Price: 160,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 07 2016 00:54:39
+	Job Status: Done
+	Article Status: Rewrite
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: -60,000 VND
+			Note: Chỉnh lại nội dung khá nhiều
+	Total: 100,000 VND
+----- End Job#2 -----
+----- Begin Job#3 -----
+	Job Name: Công việc 09
+	Tag Name: Đầu Tư
+	Class Name: B1
+	Base Price: 200,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 07 2016 00:54:51
+	Job Status: Done
+	Article Status: Edit
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: -10,000 VND
+			Note: Còn một số lỗi cần hiệu chỉnh
+	Total: 190,000 VND
+----- End Job#3 -----
+----- Begin Job#4 -----
+	Job Name: Công việc 10
+	Tag Name: Kinh Tế
+	Class Name: A1
+	Base Price: 300,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 07 2016 00:55:02
+	Job Status: Fault
+	Article Status: Unedit
+	Submission Status: OnTime
+	Extra payments:
+		Empty extra payment
+	Total: 0 VND
+----- End Job#4 -----
+----- Begin Job#5 -----
+	Job Name: Công việc 11
+	Tag Name: Bảo Hiểm
+	Class Name: A1
+	Base Price: 300,000
+	Deadline: September 08 2016 00:00:00
+	Submitted: September 07 2016 00:55:11
+	Job Status: Done
+	Article Status: Unedit
+	Submission Status: OnTime
+	Extra payments:
+		Extra payment #1
+			Amount: 20,000 VND
+			Note: Bài viết tốt
+	Total: 320,000 VND
+----- End Job#5 -----
+----- Number of jobs: 5 - Total Value: 730000
+------------------------- Ending -------------------------
